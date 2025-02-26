@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('/admin')->name("admin.")->group(function () {
-  Route::middleware("admin")->group(function () {
+  // Route::middleware("admin")->group(function () {
     //========================================= ADMIN HOME PAGE 
     Route::view("/home", "admin.pages.home")->name("index");
     //========================================= SETTING PAGE 
@@ -26,4 +26,4 @@ Route::prefix('/admin')->name("admin.")->group(function () {
     Route::view("/projects", "admin.pages.projects.index" )->name("projects");
   });
   Route::view("/login", "admin.pages.auth.login")->middleware("guest:admin")->name("login");
-});
+// });
